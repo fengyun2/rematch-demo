@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import {init} from '@rematch/core'
 import {Provider} from 'react-redux'
-import models from './models'
+import store from './store'
 import Count from './containers/Count'
-
-// generate Redux store
-const store = init({
-  models
-})
-
+import ListItems from './containers/ListItems'
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Count />
+        <div className="App">
+          <Count />
+          <ListItems />
+        </div>
       </Provider>
     );
   }
